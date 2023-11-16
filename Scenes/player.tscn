@@ -18,3 +18,8 @@ texture = ExtResource("2_ndvh7")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
+
+[node name="PlayerSuperJumpTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="PlayerSuperJumpTimer" to="." method="_on_player_super_jump_timer_timeout"]

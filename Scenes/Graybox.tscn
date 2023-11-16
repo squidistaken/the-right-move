@@ -11,6 +11,7 @@ size = Vector2(256, 256)
 [node name="Player" parent="." instance=ExtResource("1_p88k1")]
 position = Vector2(367, 218)
 scale = Vector2(0.4, 0.4)
+dash_multiplier = 1250
 
 [node name="Wall" type="Node2D" parent="."]
 
@@ -22,6 +23,16 @@ scale = Vector2(8.09382, 1.28836)
 shape = SubResource("RectangleShape2D_3m1vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D"]
+texture = ExtResource("1_a82e0")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Wall"]
+position = Vector2(-840, 200)
+scale = Vector2(8.09382, 0.568361)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_3m1vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D5"]
 texture = ExtResource("1_a82e0")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Wall"]
