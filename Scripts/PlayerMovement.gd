@@ -14,7 +14,7 @@ var can_super_jump = false
 
 func _physics_process(_delta):
 	var input_dir: Vector2 = input()
-	
+
 	if input_dir != Vector2.ZERO:
 		velocity = velocity.move_toward(speed * input_dir, acc)
 		if Input.is_action_pressed("super_jump"):
@@ -62,7 +62,7 @@ func refresh_cooldown() -> bool:
 	return false
 
 func charge_super_jump():
-	var charge_time = 0.7
+	var charge_time = 0.5
 	if Input.is_action_just_pressed("super_jump"):
 		has_jumped = true
 		$PlayerSuperJumpTimer.start(charge_time)
