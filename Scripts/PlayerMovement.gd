@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const speed = 400
-@export var dash_multiplier = 2000
+const dash_multiplier = 1250
 const jump_velocity = -2000
 const acc = 50
 const fric = 70
