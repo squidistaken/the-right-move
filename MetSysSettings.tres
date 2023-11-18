@@ -7,5 +7,5 @@
 script = ExtResource("1_08cyk")
 theme = ExtResource("2_cilpt")
 map_root_folder = "res://"
-in_game_cell_size = Vector2(1152, 648)
+in_game_cell_size = Vector2(1000, 1000)
 collectible_list = Array[Dictionary]([])
