@@ -1,66 +1,108 @@
-[gd_scene load_steps=4 format=3 uid="uid://bksfta1j11vom"]
+[gd_scene load_steps=8 format=3 uid="uid://bksfta1j11vom"]
 
 [ext_resource type="Texture2D" uid="uid://c63yt6dxgsho0" path="res://Assets/FloorTemporary.png" id="1_a82e0"]
-[ext_resource type="PackedScene" uid="uid://c0osqpvnccpkw" path="res://Scenes/player.tscn" id="1_p88k1"]
+[ext_resource type="PackedScene" uid="uid://c0osqpvnccpkw" path="res://Scenes/Player.tscn" id="1_p88k1"]
+[ext_resource type="Texture2D" uid="uid://cbye7271aq7k6" path="res://Assets/DestroyableTemporary.png" id="3_svtk0"]
+[ext_resource type="Script" path="res://Scripts/Destroyable.gd" id="3_wo0ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3m1vw"]
 size = Vector2(256, 256)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw6mv"]
+size = Vector2(256, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u60ms"]
+size = Vector2(320, 320)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_p88k1")]
-position = Vector2(367, 218)
+position = Vector2(-632, -176)
+scale = Vector2(0.4, 0.4)
+collision_mask = 3
+
+[node name="Environment" type="Node2D" parent="."]
+position = Vector2(-16, 168)
+
+[node name="Walls" type="Node" parent="Environment"]
+
+[node name="Wall01" type="StaticBody2D" parent="Environment/Walls"]
+position = Vector2(0, 320)
+scale = Vector2(8.5, 1)
+
+[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall01"]
+shape = SubResource("RectangleShape2D_3m1vw")
+
+[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall01"]
+texture = ExtResource("1_a82e0")
+
+[node name="Wall02" type="StaticBody2D" parent="Environment/Walls"]
+position = Vector2(-960, -896)
+rotation = -1.57079
+scale = Vector2(8.5, 1)
+
+[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall02"]
+shape = SubResource("RectangleShape2D_3m1vw")
+
+[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall02"]
+texture = ExtResource("1_a82e0")
+
+[node name="Wall03" type="StaticBody2D" parent="Environment/Walls"]
+position = Vector2(-704, 64)
+rotation = -1.57079
+
+[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall03"]
+shape = SubResource("RectangleShape2D_3m1vw")
+
+[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall03"]
+texture = ExtResource("1_a82e0")
+
+[node name="Wall04" type="StaticBody2D" parent="Environment/Walls"]
+position = Vector2(-272, 144)
+rotation = -1.57079
 scale = Vector2(0.4, 0.4)
 
-[node name="Wall" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall"]
-position = Vector2(-416, 680)
-scale = Vector2(8.09382, 1.28836)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D"]
+[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall04"]
 shape = SubResource("RectangleShape2D_3m1vw")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D"]
+[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall04"]
 texture = ExtResource("1_a82e0")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Wall"]
-position = Vector2(-840, 200)
-scale = Vector2(8.09382, 0.568361)
+[node name="Destroyables" type="Node" parent="Environment"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D5"]
-shape = SubResource("RectangleShape2D_3m1vw")
+[node name="Destroyable01" type="StaticBody2D" parent="Environment/Destroyables"]
+position = Vector2(304, 56)
+collision_layer = 2
+script = ExtResource("3_wo0ni")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D5"]
-texture = ExtResource("1_a82e0")
+[node name="DestroyableCollisionWall" type="CollisionShape2D" parent="Environment/Destroyables/Destroyable01"]
+shape = SubResource("RectangleShape2D_jw6mv")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Wall"]
-position = Vector2(300, 825)
-scale = Vector2(8.09382, 1.28836)
+[node name="DestroyableArea" type="Area2D" parent="Environment/Destroyables/Destroyable01"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_3m1vw")
+[node name="DestroyableAreaCollision" type="CollisionShape2D" parent="Environment/Destroyables/Destroyable01/DestroyableArea"]
+shape = SubResource("RectangleShape2D_u60ms")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D3"]
-texture = ExtResource("1_a82e0")
+[node name="DestroyableSprite" type="Sprite2D" parent="Environment/Destroyables/Destroyable01"]
+texture = ExtResource("3_svtk0")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Wall"]
-position = Vector2(1936, 680)
-scale = Vector2(8.09382, 1.28836)
+[node name="Destroyable02" type="StaticBody2D" parent="Environment/Destroyables"]
+position = Vector2(704, -40)
+collision_layer = 2
+script = ExtResource("3_wo0ni")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D4"]
-shape = SubResource("RectangleShape2D_3m1vw")
+[node name="DestroyableCollisionWall" type="CollisionShape2D" parent="Environment/Destroyables/Destroyable02"]
+shape = SubResource("RectangleShape2D_jw6mv")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D4"]
-texture = ExtResource("1_a82e0")
+[node name="DestroyableArea" type="Area2D" parent="Environment/Destroyables/Destroyable02"]
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Wall"]
-position = Vector2(-123, 384)
-rotation = 1.5708
-scale = Vector2(4.41382, 1.28836)
+[node name="DestroyableAreaCollision" type="CollisionShape2D" parent="Environment/Destroyables/Destroyable02/DestroyableArea"]
+shape = SubResource("RectangleShape2D_u60ms")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D2"]
-shape = SubResource("RectangleShape2D_3m1vw")
+[node name="DestroyableSprite" type="Sprite2D" parent="Environment/Destroyables/Destroyable02"]
+texture = ExtResource("3_svtk0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall/StaticBody2D2"]
-texture = ExtResource("1_a82e0")
+[connection signal="body_entered" from="Environment/Destroyables/Destroyable01/DestroyableArea" to="Environment/Destroyables/Destroyable01" method="_on_destroyable_area_body_entered"]
+[connection signal="body_exited" from="Environment/Destroyables/Destroyable01/DestroyableArea" to="Environment/Destroyables/Destroyable01" method="_on_destroyable_area_body_exited"]
+[connection signal="body_entered" from="Environment/Destroyables/Destroyable02/DestroyableArea" to="Environment/Destroyables/Destroyable02" method="_on_destroyable_area_body_entered"]
+[connection signal="body_exited" from="Environment/Destroyables/Destroyable02/DestroyableArea" to="Environment/Destroyables/Destroyable02" method="_on_destroyable_area_body_exited"]
