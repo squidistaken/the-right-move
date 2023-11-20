@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bksfta1j11vom"]
+[gd_scene load_steps=9 format=3 uid="uid://bksfta1j11vom"]
 
-[ext_resource type="Texture2D" uid="uid://c63yt6dxgsho0" path="res://Assets/FloorTemporary.png" id="1_a82e0"]
-[ext_resource type="PackedScene" uid="uid://c0osqpvnccpkw" path="res://Scenes/Player.tscn" id="1_p88k1"]
-[ext_resource type="Texture2D" uid="uid://cbye7271aq7k6" path="res://Assets/DestroyableTemporary.png" id="3_svtk0"]
-[ext_resource type="Script" path="res://Scripts/Destroyable.gd" id="3_wo0ni"]
+[ext_resource type="PackedScene" uid="uid://c0osqpvnccpkw" path="res://Scenes/Player.tscn" id="1_i7j6t"]
+[ext_resource type="Texture2D" uid="uid://c63yt6dxgsho0" path="res://Assets/FloorTemporary.png" id="2_kjk7f"]
+[ext_resource type="Script" path="res://Scripts/Destroyable.gd" id="3_k2jyn"]
+[ext_resource type="Texture2D" uid="uid://cbye7271aq7k6" path="res://Assets/DestroyableTemporary.png" id="4_x8871"]
+[ext_resource type="PackedScene" uid="uid://bsg0351mx3b4u" path="res://addons/MetroidvaniaSystem/Nodes/RoomInstance.tscn" id="5_majf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3m1vw"]
 size = Vector2(256, 256)
@@ -16,7 +17,7 @@ size = Vector2(320, 320)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_p88k1")]
+[node name="Player" parent="." instance=ExtResource("1_i7j6t")]
 position = Vector2(-632, -176)
 scale = Vector2(0.4, 0.4)
 collision_mask = 3
@@ -34,7 +35,7 @@ scale = Vector2(8.5, 1)
 shape = SubResource("RectangleShape2D_3m1vw")
 
 [node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall01"]
-texture = ExtResource("1_a82e0")
+texture = ExtResource("2_kjk7f")
 
 [node name="Wall02" type="StaticBody2D" parent="Environment/Walls"]
 position = Vector2(-960, -896)
@@ -45,7 +46,7 @@ scale = Vector2(8.5, 1)
 shape = SubResource("RectangleShape2D_3m1vw")
 
 [node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall02"]
-texture = ExtResource("1_a82e0")
+texture = ExtResource("2_kjk7f")
 
 [node name="Wall03" type="StaticBody2D" parent="Environment/Walls"]
 position = Vector2(-704, 64)
@@ -55,7 +56,7 @@ rotation = -1.57079
 shape = SubResource("RectangleShape2D_3m1vw")
 
 [node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall03"]
-texture = ExtResource("1_a82e0")
+texture = ExtResource("2_kjk7f")
 
 [node name="Wall04" type="StaticBody2D" parent="Environment/Walls"]
 position = Vector2(-272, 144)
@@ -66,14 +67,14 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("RectangleShape2D_3m1vw")
 
 [node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall04"]
-texture = ExtResource("1_a82e0")
+texture = ExtResource("2_kjk7f")
 
 [node name="Destroyables" type="Node" parent="Environment"]
 
 [node name="Destroyable01" type="StaticBody2D" parent="Environment/Destroyables"]
 position = Vector2(304, 56)
 collision_layer = 2
-script = ExtResource("3_wo0ni")
+script = ExtResource("3_k2jyn")
 
 [node name="DestroyableCollisionWall" type="CollisionShape2D" parent="Environment/Destroyables/Destroyable01"]
 shape = SubResource("RectangleShape2D_jw6mv")
@@ -84,12 +85,12 @@ shape = SubResource("RectangleShape2D_jw6mv")
 shape = SubResource("RectangleShape2D_u60ms")
 
 [node name="DestroyableSprite" type="Sprite2D" parent="Environment/Destroyables/Destroyable01"]
-texture = ExtResource("3_svtk0")
+texture = ExtResource("4_x8871")
 
 [node name="Destroyable02" type="StaticBody2D" parent="Environment/Destroyables"]
 position = Vector2(704, -40)
 collision_layer = 2
-script = ExtResource("3_wo0ni")
+script = ExtResource("3_k2jyn")
 
 [node name="DestroyableCollisionWall" type="CollisionShape2D" parent="Environment/Destroyables/Destroyable02"]
 shape = SubResource("RectangleShape2D_jw6mv")
@@ -100,7 +101,10 @@ shape = SubResource("RectangleShape2D_jw6mv")
 shape = SubResource("RectangleShape2D_u60ms")
 
 [node name="DestroyableSprite" type="Sprite2D" parent="Environment/Destroyables/Destroyable02"]
-texture = ExtResource("3_svtk0")
+texture = ExtResource("4_x8871")
+
+[node name="RoomInstance" parent="." instance=ExtResource("5_majf8")]
+position = Vector2(1216, -496)
 
 [connection signal="body_entered" from="Environment/Destroyables/Destroyable01/DestroyableArea" to="Environment/Destroyables/Destroyable01" method="_on_destroyable_area_body_entered"]
 [connection signal="body_exited" from="Environment/Destroyables/Destroyable01/DestroyableArea" to="Environment/Destroyables/Destroyable01" method="_on_destroyable_area_body_exited"]

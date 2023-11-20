@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_08cyk")
 theme = ExtResource("2_cilpt")
-map_root_folder = "res://"
-in_game_cell_size = Vector2(1000, 1000)
+map_root_folder = "res://Scenes/Maps"
+in_game_cell_size = Vector2(100, 100)
 collectible_list = Array[Dictionary]([])
