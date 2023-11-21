@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the-right-move"
-run/main_scene="res://Scenes/Maps/Graybox.tscn"
+run/main_scene="res://Scenes/Maps/Testing/Graybox.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"

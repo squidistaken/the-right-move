@@ -1,11 +1,11 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b8hh32nij2a81"]
 
 [ext_resource type="Script" path="res://addons/MetroidvaniaSystem/Scripts/Settings.gd" id="1_08cyk"]
-[ext_resource type="Resource" uid="uid://bt6s3nd8xo6b" path="res://addons/MetroidvaniaSystem/Themes/Exquisite/Theme.tres" id="2_cilpt"]
+[ext_resource type="Resource" uid="uid://cpqftkus7vhk1" path="res://addons/MetroidvaniaSystem/Themes/SotN/Theme.tres" id="2_7cgp1"]
 
 [resource]
 script = ExtResource("1_08cyk")
-theme = ExtResource("2_cilpt")
+theme = ExtResource("2_7cgp1")
 map_root_folder = "res://Scenes/Maps"
-in_game_cell_size = Vector2(100, 100)
+in_game_cell_size = Vector2(4000, 4000)
 collectible_list = Array[Dictionary]([])

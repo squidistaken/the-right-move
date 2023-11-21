@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c8m2c0d2alb4v"]
+
+[node name="Jump" type="Node2D"]
