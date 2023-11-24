@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbea8v6is4qun"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_ctwql"]
+[ext_resource type="PackedScene" uid="uid://c0osqpvnccpkw" path="res://Scenes/Player.tscn" id="2_4nqbo"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_ctwql")
+starting_map = "InTheBeginning.tscn"
+
+[node name="Player" parent="." instance=ExtResource("2_4nqbo")]

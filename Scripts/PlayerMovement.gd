@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const speed = 400
-const dash_multiplier = 1250
-const jump_velocity = -2000
+const speed = 1000
+const dash_multiplier = 1500
+const jump_velocity = -3000
 const acc = 50
 const fric = 70
 const grav = 120
@@ -11,6 +11,8 @@ const cooldown = 0.5
 var has_jumped = false
 var has_dashed = false
 var can_super_jump = false
+
+var reset_position: Vector2
 
 func _physics_process(_delta):
 	var input_dir: Vector2 = input()
@@ -71,3 +73,6 @@ func charge_super_jump():
 
 func _on_player_super_jump_timer_timeout():
 	can_super_jump = true
+
+func on_enter():
+	reset_position = position
