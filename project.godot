@@ -78,3 +78,7 @@ super_jump={
 [metroidvania_system]
 
 settings_file="res://MetSysSettings.tres"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.858824, 0.905882, 1, 1)
