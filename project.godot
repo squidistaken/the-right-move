@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the-right-move"
-run/main_scene="res://Scenes/Maps/Testing/Graybox.tscn"
+run/main_scene="res://Scenes/GameManager.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -22,8 +22,8 @@ MetSys="*res://addons/MetroidvaniaSystem/Nodes/Singleton.tscn"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
+window/size/viewport_width=922
+window/size/viewport_height=922
 window/size/initial_position=Vector2i(480, 720)
 window/stretch/mode="canvas_items"
 
@@ -78,3 +78,7 @@ super_jump={
 [metroidvania_system]
 
 settings_file="res://MetSysSettings.tres"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.858824, 0.905882, 1, 1)
