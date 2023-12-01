@@ -24,7 +24,6 @@ one_shot = true
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_lvckc")
-animation = &"super_jump"
+animation = &"idle"
 
 [connection signal="timeout" from="PlayerSuperJumpTimer" to="." method="_on_player_super_jump_timer_timeout"]
-[connection signal="animation_finished" from="PlayerSprite" to="." method="_on_player_sprite_animation_finished"]
