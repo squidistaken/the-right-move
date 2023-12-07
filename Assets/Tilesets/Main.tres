@@ -1,9 +1,51 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c7t0qn78wav4m"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://c7t0qn78wav4m"]
 
-[ext_resource type="Texture2D" uid="uid://fdr3ulplr7gq" path="res://Assets/Tilesets/Phase One/PhaseOne.png" id="1_gwdm4"]
+[ext_resource type="Texture2D" uid="uid://nu3fu7f685in" path="res://Assets/ConveyorBelt/ConveyorBelt.png" id="1_fdfvr"]
+[ext_resource type="Texture2D" uid="uid://fdr3ulplr7gq" path="res://Assets/Tilesets/Phase One/PhaseOne.png" id="2_wydt6"]
+[ext_resource type="PackedScene" uid="uid://bdupsw1efj2yv" path="res://Assets/ConveyorBelt/ConveyorBeltLeft.tscn" id="3_3k2db"]
+[ext_resource type="PackedScene" uid="uid://b8lldedmeq4pv" path="res://Assets/ConveyorBelt/ConveyorBeltMiddle.tscn" id="4_iiaik"]
+[ext_resource type="PackedScene" uid="uid://b2sggqmeysb5f" path="res://Assets/ConveyorBelt/ConveyorBeltRight.tscn" id="5_wqjvn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otx33"]
+resource_name = "ConveyorBelt"
+texture = ExtResource("1_fdfvr")
+texture_region_size = Vector2i(256, 256)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/animation_columns = 1
+1:0/animation_speed = 8.0
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/animation_columns = 1
+2:0/animation_speed = 8.0
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l83n"]
-texture = ExtResource("1_gwdm4")
+texture = ExtResource("2_wydt6")
 texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -114,7 +156,15 @@ texture_region_size = Vector2i(256, 256)
 7:2/0/physics_layer_0/polygon_0/one_way = true
 7:2/0/physics_layer_0/polygon_0/one_way_margin = 100.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ahxr8"]
+resource_name = "ConveyorBelt"
+scenes/1/scene = ExtResource("3_3k2db")
+scenes/2/scene = ExtResource("4_iiaik")
+scenes/3/scene = ExtResource("5_wqjvn")
+
 [resource]
 tile_size = Vector2i(256, 256)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_8l83n")
+sources/0 = SubResource("TileSetAtlasSource_otx33")
+sources/2 = SubResource("TileSetScenesCollectionSource_ahxr8")

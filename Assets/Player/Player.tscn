@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0osqpvnccpkw"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_4uj84"]
-[ext_resource type="SpriteFrames" uid="uid://ba15p2etrtysf" path="res://Assets/Player/Player.tres" id="2_lvckc"]
+[ext_resource type="Script" path="res://Assets/Player/PlayerMovement.gd" id="1_amclh"]
+[ext_resource type="SpriteFrames" uid="uid://ba15p2etrtysf" path="res://Assets/Player/Player.tres" id="2_d16lt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75dne"]
 size = Vector2(256, 256)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_4uj84")
+script = ExtResource("1_amclh")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_75dne")
@@ -23,7 +23,7 @@ one_shot = true
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
-sprite_frames = ExtResource("2_lvckc")
+sprite_frames = ExtResource("2_d16lt")
 animation = &"dash"
 
 [connection signal="timeout" from="PlayerSuperJumpTimer" to="." method="_on_player_super_jump_timer_timeout"]

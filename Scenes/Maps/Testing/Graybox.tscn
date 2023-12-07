@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bksfta1j11vom"]
+[gd_scene load_steps=7 format=3 uid="uid://bksfta1j11vom"]
 
-[ext_resource type="PackedScene" uid="uid://c0osqpvnccpkw" path="res://Scenes/Player.tscn" id="1_d38xg"]
-[ext_resource type="Texture2D" uid="uid://c63yt6dxgsho0" path="res://Assets/FloorTemporary.png" id="2_tfm6g"]
 [ext_resource type="Script" path="res://Scripts/Destroyable.gd" id="3_c35wg"]
 [ext_resource type="Texture2D" uid="uid://cbye7271aq7k6" path="res://Assets/DestroyableTemporary.png" id="4_3k3y1"]
 [ext_resource type="PackedScene" uid="uid://bsg0351mx3b4u" path="res://addons/MetroidvaniaSystem/Nodes/RoomInstance.tscn" id="5_4ei43"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m1vw"]
-size = Vector2(256, 256)
+[ext_resource type="TileSet" uid="uid://c7t0qn78wav4m" path="res://Assets/Tilesets/Main.tres" id="5_8wn0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw6mv"]
 size = Vector2(256, 256)
@@ -17,57 +13,8 @@ size = Vector2(320, 320)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_d38xg")]
-position = Vector2(1768, 1968)
-scale = Vector2(0.4, 0.4)
-collision_mask = 3
-
 [node name="Environment" type="Node2D" parent="."]
 position = Vector2(2384, 2312)
-
-[node name="Walls" type="Node" parent="Environment"]
-
-[node name="Wall01" type="StaticBody2D" parent="Environment/Walls"]
-position = Vector2(2400, 2464)
-scale = Vector2(8.5, 1)
-
-[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall01"]
-shape = SubResource("RectangleShape2D_3m1vw")
-
-[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall01"]
-texture = ExtResource("2_tfm6g")
-
-[node name="Wall02" type="StaticBody2D" parent="Environment/Walls"]
-position = Vector2(1440, 1248)
-rotation = -1.57079
-scale = Vector2(8.5, 1)
-
-[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall02"]
-shape = SubResource("RectangleShape2D_3m1vw")
-
-[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall02"]
-texture = ExtResource("2_tfm6g")
-
-[node name="Wall03" type="StaticBody2D" parent="Environment/Walls"]
-position = Vector2(1696, 2208)
-rotation = -1.57079
-
-[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall03"]
-shape = SubResource("RectangleShape2D_3m1vw")
-
-[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall03"]
-texture = ExtResource("2_tfm6g")
-
-[node name="Wall04" type="StaticBody2D" parent="Environment/Walls"]
-position = Vector2(2128, 2288)
-rotation = -1.57079
-scale = Vector2(0.4, 0.4)
-
-[node name="WallCollision" type="CollisionShape2D" parent="Environment/Walls/Wall04"]
-shape = SubResource("RectangleShape2D_3m1vw")
-
-[node name="WallSprite" type="Sprite2D" parent="Environment/Walls/Wall04"]
-texture = ExtResource("2_tfm6g")
 
 [node name="Destroyables" type="Node" parent="Environment"]
 
@@ -102,6 +49,11 @@ shape = SubResource("RectangleShape2D_u60ms")
 
 [node name="DestroyableSprite" type="Sprite2D" parent="Environment/Destroyables/Destroyable02"]
 texture = ExtResource("4_3k3y1")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_8wn0i")
+format = 2
+layer_0/tile_data = PackedInt32Array(393220, 262145, 0, 458756, 262145, 0, 524292, 262145, 0, 589828, 262145, 0, 655364, 262145, 0, 655365, 262145, 0, 720901, 262145, 0, 720902, 262145, 0, 720903, 262145, 0, 786439, 262145, 0, 786440, 262145, 0, 786441, 262145, 0, 786442, 262145, 0, 786443, 262145, 0, 720907, 262145, 0, 720908, 262145, 0, 720909, 262145, 0, 720910, 262145, 0, 655374, 262145, 0, 655373, 262145, 0, 655372, 262145, 0, 655371, 262145, 0, 655370, 2, 196608, 655369, 2, 131072, 655368, 2, 65536, 655367, 262145, 0, 655366, 262145, 0, 720900, 262145, 0, 786436, 262145, 0, 786437, 262145, 0, 786438, 262145, 0, 720904, 262145, 0, 720905, 262145, 0, 720906, 262145, 0)
 
 [node name="RoomInstance" parent="." instance=ExtResource("5_4ei43")]
 
