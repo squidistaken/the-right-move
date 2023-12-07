@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fccpv"]
 size = Vector2(256, 256)
 
+[sub_resource type="Animation" id="Animation_fwe7g"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_6ktgu"]
 resource_name = "unlock_float"
 loop_mode = 1
@@ -23,9 +26,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fwe7g"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f17ak"]
 _data = {
 "RESET": SubResource("Animation_fwe7g"),
@@ -42,7 +42,6 @@ shape = SubResource("RectangleShape2D_fccpv")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_qhclp")
 animation = &"jump_unlock"
-offset = Vector2(0, -9.90198)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

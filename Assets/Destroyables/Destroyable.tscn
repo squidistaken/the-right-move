@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnkplehwt3vfo"]
+
+[ext_resource type="Script" path="res://Assets/Destroyables/Destroyable.gd" id="1_6bupg"]
+[ext_resource type="Texture2D" uid="uid://c53hep74y37j6" path="res://Assets/Destroyables/Destroyables.png" id="1_xw0mw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhr2s"]
+size = Vector2(320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjvn7"]
+atlas = ExtResource("1_xw0mw")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybn83"]
+atlas = ExtResource("1_xw0mw")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70s1e"]
+atlas = ExtResource("1_xw0mw")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usmma"]
+atlas = ExtResource("1_xw0mw")
+region = Rect2(0, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mekfe"]
+atlas = ExtResource("1_xw0mw")
+region = Rect2(0, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m5h5"]
+atlas = ExtResource("1_xw0mw")
+region = Rect2(0, 1280, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p16pk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjvn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybn83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70s1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usmma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mekfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m5h5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmu0x"]
+size = Vector2(256, 256)
+
+[node name="Destroyable" type="StaticBody2D"]
+script = ExtResource("1_6bupg")
+
+[node name="Interaction" type="Area2D" parent="."]
+
+[node name="Interaction" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("RectangleShape2D_uhr2s")
+debug_color = Color(0, 0.639216, 0.384314, 0.419608)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_p16pk")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mmu0x")
+
+[connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
+[connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

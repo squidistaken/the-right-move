@@ -10,6 +10,7 @@ size = Vector2(256, 256)
 size = Vector2(256, 42)
 
 [node name="ConveyorBeltRight" type="StaticBody2D"]
+z_index = 1
 script = ExtResource("1_b1iea")
 type = "right"
 
@@ -19,7 +20,6 @@ shape = SubResource("RectangleShape2D_hsseg")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_pad2j")
 animation = &"right"
-frame_progress = 0.274855
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(0, -128)

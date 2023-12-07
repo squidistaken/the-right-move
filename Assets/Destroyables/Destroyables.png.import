@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbye7271aq7k6"
-path="res://.godot/imported/DestroyableTemporary.png-6bf09fee0cd0757b8393a1063dc43a1c.ctex"
+uid="uid://c53hep74y37j6"
+path="res://.godot/imported/Destroyables.png-0f03e403a8ac6b93105258773f00a127.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/DestroyableTemporary.png"
-dest_files=["res://.godot/imported/DestroyableTemporary.png-6bf09fee0cd0757b8393a1063dc43a1c.ctex"]
+source_file="res://Assets/Destroyables/Destroyables.png"
+dest_files=["res://.godot/imported/Destroyables.png-0f03e403a8ac6b93105258773f00a127.ctex"]
 
 [params]
 

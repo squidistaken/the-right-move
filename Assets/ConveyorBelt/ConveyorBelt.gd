@@ -11,6 +11,7 @@ func _process(_delta):
 
 func _ready():
 	match type:
+		"individual": $Sprite.play("individual")
 		"left": $Sprite.play("left")
 		"middle": $Sprite.play("middle")
 		"right": $Sprite.play("right")

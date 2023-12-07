@@ -1,32 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8lldedmeq4pv"]
+[gd_scene load_steps=5 format=3 uid="uid://bjnuiejltawtd"]
 
-[ext_resource type="SpriteFrames" uid="uid://u5ogemupew1c" path="res://Assets/ConveyorBelt/ConveyorBelt.tres" id="1_2g4ni"]
-[ext_resource type="Script" path="res://Assets/ConveyorBelt/ConveyorBelt.gd" id="1_mf5d5"]
+[ext_resource type="Script" path="res://Assets/ConveyorBelt/ConveyorBelt.gd" id="1_0pbmu"]
+[ext_resource type="SpriteFrames" uid="uid://u5ogemupew1c" path="res://Assets/ConveyorBelt/ConveyorBelt.tres" id="2_is7sx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsseg"]
 size = Vector2(256, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_woi70"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87mqe"]
 size = Vector2(256, 42)
 
-[node name="ConveyorBeltMiddle" type="StaticBody2D"]
+[node name="ConveyorBeltIndividual" type="StaticBody2D"]
 z_index = 1
-script = ExtResource("1_mf5d5")
-type = "middle"
+script = ExtResource("1_0pbmu")
+type = "individual"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hsseg")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("1_2g4ni")
-animation = &"middle"
+sprite_frames = ExtResource("2_is7sx")
+animation = &"individual"
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(0, -128)
 
 [node name="Interaction" type="CollisionShape2D" parent="Interaction"]
 position = Vector2(0, -21)
-shape = SubResource("RectangleShape2D_woi70")
+shape = SubResource("RectangleShape2D_87mqe")
 debug_color = Color(0, 0.643137, 0.301961, 0.419608)
 
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
