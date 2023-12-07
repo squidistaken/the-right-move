@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c63yt6dxgsho0"
-path="res://.godot/imported/FloorTemporary.png-7e38f534d5695c4508401d24d3fa2f1e.ctex"
+uid="uid://6unk6456s7il"
+path="res://.godot/imported/JumpUnlock.png-487289cdf39066fc568f21c4bc52de23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FloorTemporary.png"
-dest_files=["res://.godot/imported/FloorTemporary.png-7e38f534d5695c4508401d24d3fa2f1e.ctex"]
+source_file="res://Assets/Unlocks/JumpUnlock/JumpUnlock.png"
+dest_files=["res://.godot/imported/JumpUnlock.png-487289cdf39066fc568f21c4bc52de23.ctex"]
 
 [params]
 

@@ -5,6 +5,6 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ctwql")
-starting_map = "Showtime.tscn"
+starting_map = "PlumberMoves.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_4nqbo")]

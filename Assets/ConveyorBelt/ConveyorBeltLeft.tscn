@@ -18,7 +18,8 @@ shape = SubResource("RectangleShape2D_hsseg")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_hmmw6")
-animation = &"left"
+animation = &"right"
+frame_progress = 0.737929
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(0, -128)

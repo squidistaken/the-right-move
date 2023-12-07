@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dimp644igwjul"]
+
+[ext_resource type="Script" path="res://Assets/Unlocks/Unlocks.gd" id="1_bbyap"]
+[ext_resource type="SpriteFrames" uid="uid://db61reboifbik" path="res://Assets/Unlocks/Unlocks.tres" id="1_qhclp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fccpv"]
+size = Vector2(256, 256)
+
+[sub_resource type="Animation" id="Animation_6ktgu"]
+resource_name = "unlock_float"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(3, 3, 3),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fwe7g"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f17ak"]
+_data = {
+"RESET": SubResource("Animation_fwe7g"),
+"unlock_float": SubResource("Animation_6ktgu")
+}
+
+[node name="Unlocks" type="Area2D"]
+z_index = 2
+script = ExtResource("1_bbyap")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fccpv")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_qhclp")
+animation = &"jump_unlock"
+offset = Vector2(0, -9.90198)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f17ak")
+}
+autoplay = "unlock_float"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

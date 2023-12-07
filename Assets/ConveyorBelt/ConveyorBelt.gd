@@ -5,7 +5,7 @@ extends StaticBody2D
 var is_colliding: bool = false
 var player
 
-func _process(delta):
+func _process(_delta):
 	if is_colliding:
 		player.velocity.x -= 20
 
@@ -20,5 +20,5 @@ func _on_interaction_body_entered(body):
 		player = body
 		is_colliding = true
 		
-func _on_interaction_body_exited(body):
+func _on_interaction_body_exited(_body):
 	is_colliding = false
