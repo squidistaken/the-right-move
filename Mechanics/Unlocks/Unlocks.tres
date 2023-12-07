@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://db61reboifbik"]
+
+[ext_resource type="Texture2D" uid="uid://6unk6456s7il" path="res://Mechanics/Unlocks/JumpUnlock/JumpUnlock.png" id="1_lsvm8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3x7d"]
+atlas = ExtResource("1_lsvm8")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnhi0"]
+atlas = ExtResource("1_lsvm8")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg1u5"]
+atlas = ExtResource("1_lsvm8")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm5ru"]
+atlas = ExtResource("1_lsvm8")
+region = Rect2(0, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym6jv"]
+atlas = ExtResource("1_lsvm8")
+region = Rect2(0, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwnht"]
+atlas = ExtResource("1_lsvm8")
+region = Rect2(0, 1280, 256, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3x7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnhi0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm5ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym6jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwnht")
+}],
+"loop": false,
+"name": &"jump_unlock",
+"speed": 12.0
+}]

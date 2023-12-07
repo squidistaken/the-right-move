@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2sggqmeysb5f"]
+
+[ext_resource type="Script" path="res://Mechanics/ConveyorBelt/ConveyorBelt.gd" id="1_ni5oj"]
+[ext_resource type="SpriteFrames" uid="uid://u5ogemupew1c" path="res://Mechanics/ConveyorBelt/ConveyorBelt.tres" id="2_etxyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsseg"]
+size = Vector2(256, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5raj"]
+size = Vector2(256, 42)
+
+[node name="ConveyorBeltRight" type="StaticBody2D"]
+z_index = 1
+script = ExtResource("1_ni5oj")
+type = "right"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hsseg")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_etxyn")
+animation = &"right"
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(0, -128)
+
+[node name="Interaction" type="CollisionShape2D" parent="Interaction"]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_s5raj")
+debug_color = Color(0, 0.643137, 0.301961, 0.419608)
+
+[connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
+[connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]
