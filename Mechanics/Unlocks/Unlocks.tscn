@@ -42,6 +42,7 @@ shape = SubResource("RectangleShape2D_fccpv")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_er3bu")
 animation = &"jump_unlock"
+offset = Vector2(0, -8.22)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

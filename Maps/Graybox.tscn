@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://blfx0sk0yfx1d"]
+
+[ext_resource type="PackedScene" uid="uid://bsg0351mx3b4u" path="res://addons/MetroidvaniaSystem/Nodes/RoomInstance.tscn" id="1_0ur5q"]
+[ext_resource type="TileSet" uid="uid://c7t0qn78wav4m" path="res://Tilesets/Main.tres" id="1_keo50"]
+
+[node name="Graybox" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_keo50")
+format = 2
+layer_0/name = "Interactables"
+layer_0/z_index = 2
+layer_0/navigation_enabled = false
+layer_0/tile_data = PackedInt32Array(1179660, 2, 65536, 1179661, 2, 131072, 1179662, 2, 196608, 1179656, 2, 262144, 1114115, 0, 65536)
+layer_1/name = "Foreground"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(1245192, 196613, 0, 1245191, 196613, 0, 1245190, 196613, 0, 1245189, 196613, 0, 1245188, 196613, 0, 1245187, 196613, 0, 1245186, 5, 1610612736, 1179651, 5, 0, 1179652, 5, 0, 1179653, 5, 0, 1179654, 5, 0, 1179655, 5, 0, 1179656, 5, 0, 1179657, 5, 0, 1245193, 196613, 0, 1179650, 131077, 0, 1179658, 5, 0, 1179659, 131077, 1342177280, 1245194, 196613, 0, 1245195, 5, 1, 1245196, 5, 0, 1245197, 5, 0, 1245198, 5, 0, 1245199, 5, 1610612737, 1245200, 5, 1342177280, 1114130, 131077, 0, 1179666, 131077, 1610612736, 1114131, 131077, 1342177280, 1179667, 131077, 805306368, 1179663, 131077, 0, 1179664, 131077, 1342177280, 1048589, 5, 2, 1048590, 131077, 2, 983048, 5, 805306368, 983047, 65541, 805306368, 983049, 65541, 1342177280, 917511, 131077, 0, 917513, 131077, 1342177280, 917512, 5, 0, 1048580, 5, 2, 1048581, 131077, 2, 917509, 5, 2, 917510, 65541, 2)
+layer_2/name = "Background"
+layer_2/navigation_enabled = false
+layer_2/tile_data = PackedInt32Array()
+
+[node name="RoomInstance" parent="." instance=ExtResource("1_0ur5q")]

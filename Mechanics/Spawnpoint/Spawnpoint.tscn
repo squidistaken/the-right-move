@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0322pp465u4h"]
+
+[ext_resource type="Texture2D" uid="uid://j5017mfb0642" path="res://Mechanics/Spawnpoint/Spawnpoint.png" id="1_af1j8"]
+[ext_resource type="Script" path="res://Mechanics/Spawnpoint/Spawnpoint.gd" id="1_qaahl"]
+
+[node name="Spawnpoint" type="Node2D"]
+visibility_layer = 524288
+script = ExtResource("1_qaahl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_af1j8")

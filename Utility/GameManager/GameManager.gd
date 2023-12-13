@@ -7,11 +7,19 @@ class_name GameManager
 var map: Node2D
 var generated_rooms: Array[Vector3i]
 
+
+
 func _ready() -> void:
 	MetSys.set_save_data()
 	goto_map(MetSys.get_full_room_path(starting_map))
+	
 	MetSys.room_changed.connect(on_room_changed, CONNECT_DEFERRED)
-	# TODO: Set an actual position, based on a "start" node
+	"""	
+	var start = get_node("/root/Spawnpoint").get("pos")
+	if start:
+		player.position = start
+	"""
+
 	player.set_position(Vector2(1000, 1000)) 
 	get_script().set_meta(&"singleton", self)
 
