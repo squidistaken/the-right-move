@@ -13,6 +13,7 @@ func _on_interaction_body_entered(body):
 		can_destroy = true
 
 func _on_interaction_body_exited(body):
+	body = null
 	can_destroy = false
 
 func _on_sprite_animation_finished():

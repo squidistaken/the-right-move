@@ -85,7 +85,7 @@
 [9,3,0]
 0,0,1,0|ff0000,,,,||/AnotherOne.tscn
 [7,3,0]
--1,-1,0,1|||/TheNextPrecisionPlatformer.tscn
+-1,-1,0,0|||/TheNextPrecisionPlatformer.tscn
 [7,4,0]
 -1,0,0,-1|||/TheNextPrecisionPlatformer.tscn
 [8,3,0]

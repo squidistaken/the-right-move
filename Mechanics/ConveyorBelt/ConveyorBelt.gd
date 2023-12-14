@@ -1,15 +1,13 @@
 extends StaticBody2D
 
-var push: float = 30
+var push: float = -10
 @export var type: String = ""
 var is_colliding: bool = false
-var player
+var player: CharacterBody2D
 
 func _process(_delta):
 	if is_colliding:
-		if player.velocity.x == 0:
-			player.velocity.x = -push
-		player.velocity.x -= push
+		player.move_local_x(push)
 
 func _ready():
 	match type:

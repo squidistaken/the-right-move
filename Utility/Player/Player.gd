@@ -109,7 +109,6 @@ func animate():
 		elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 			$Animator.play("walk")
 			$Sprite.play("walk")
-		 
 		else:
 			$Animator.stop()
 			$Sprite.play("idle")
@@ -123,6 +122,7 @@ func animate():
 			$Sprite.play("jump")
 			if is_jumping:
 				$Animator.play("jump")
+				is_jumping = false
 				
 	
 func _on_player_sprite_animation_finished():
